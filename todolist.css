@@ -1,0 +1,59 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    margin: 25px;
+    padding: 20px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-variant: small-caps;
+    font-size: 30px;
+    background-color: rgb(4, 21, 75);
+    /*background-image: url(todolist1.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;*/
+}
+.userinput{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+input[type="text"]{
+    background-color: rgb(64, 80, 233);
+    border: none;
+    outline: none;
+    margin: 1.5rem;
+    margin-right: 5px;
+    height: 35px;
+    min-width: 500px;
+    border-radius: 3px;
+}
+h1{
+    font-size: 3rem;
+    text-align: center;
+    color: rgb(166, 176, 223);
+}
+button{
+    height: 35px;
+    width: 35px;
+    color: rgb(166, 176, 223);
+    background-color: rgb(64, 80, 233);
+    border: 1.5px solid rgb(64, 80, 233);
+    border-radius: 8px;
+}
+.lists{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem;
+}
+ul li{
+    list-style: none;
+}
+.checkbox input[type="checkbox"]{
+    height: 20px;
+    width: 20px;
+    margin-right: 0.4rem;
+}
