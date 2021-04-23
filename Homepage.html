@@ -1,19 +1,23 @@
-<header>
+<head>
     <title>To-Do list</title>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="todolist.css" >
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@1,200&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/781571eb05.js" crossorigin="anonymous"></script>
-</header>
+</head>
 <body>
     <h1>MY TO-DO LIST</h1>
     <div class="userinput">
-            <input type="text" id="newitem" placeholder="New item..." maxlength="30">
-            <button><i class="fas fa-plus"></i></button>
+            <input type="text" id="newItem" placeholder="New item..." maxlength="30">
+            <button id="add" onclick="addTodoItem"><i class="fas fa-plus"></i></button>
     </div>
-        <div class="lists">
-            <ul id="todolist">
-                <li>Hit the Gym</li>
-            </ul>
-        </div>
+    <ul id="todolist">
+        <li class="myList"> <input type="checkbox"> <span class="close">&#xd7;</span> Hit the Gym</li>
+        <li class="myList"> <input type="checkbox"> Get to Class <span class="close">&#xd7;</span> </li>
+    </ul>
+    <div class="buttons">
+        <button id="clear-all" ><i class="fas fa-trash"></i></button>
+    </div>
     <script src="todolist.js"></script>
 </body>
