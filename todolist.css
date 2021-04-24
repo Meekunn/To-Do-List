@@ -91,6 +91,9 @@ ul li{
     position: relative;
     width: 80%;
 }
+ul li.checked {
+    text-decoration: line-through;
+}
 .close{
     position: absolute;
     right: 0;
