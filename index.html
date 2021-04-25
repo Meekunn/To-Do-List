@@ -10,11 +10,11 @@
     <h1>MY TO-DO LIST</h1>
     <div class="userinput">
             <input type="text" id="newItem" placeholder="New item..." maxlength="30">
-            <button id="add" onclick="addTodoItem"><i class="fas fa-plus"></i></button>
+            <button id="add" onkeypress="console.log('key press')"><i class="fas fa-plus"></i></button>
     </div>
     <ul id="todolist">
-        <li class="myList"><input type="checkbox"> Hit the Gym <span class="close">&#xd7;</span></li>
-        <li class="myList"><input type="checkbox"> Get to Class <span class="close">&#xd7;</span> </li>
+        <li class="myList"><!--<input type="checkbox">--> Hit the Gym <span class="close">&#xd7;</span></li>
+        <li class="myList"><!--<input type="checkbox">--> Get to Class <span class="close">&#xd7;</span> </li>
     </ul>
     <div class="buttons">
         <button id="clear-all" ><i class="fas fa-trash"></i></button>

@@ -1,42 +1,68 @@
 
 //Add EventListenerS to Add Button
 const additem = document.getElementById("add");
-additem.addEventListener('click', addTodoItem);
+["click", "keypress"].forEach(ev =>{
+    additem.addEventListener(ev, function(e){
+        if(ev == "click"){
+            addTodoItem();
+            console.log("Clicked!");
+        }
+        //if(e.keyCode == 13){
+            //e.addTodoItem();
+//additem.onkeypress();
+            //console.log("keypress");
+        //}
+    })
+})
+//additem.addEventListener('click', addTodoItem);
 
 function addTodoItem(){
     const newlist = document.createElement('li');
-    const checkbox = document.createElement("input");
-    const label = document.createElement("label");
+    //const checkbox = document.createElement("input");
+    //const label = document.createElement("label");
     const span = document.createElement("SPAN");
     const txt = document.createTextNode("\u00D7");
-    //const item = document.getElementById("newItem").value;
-    label.innerText = document.getElementById("newItem").value;
-    if (label.innerText === '') {
+    const item = document.getElementById("newItem").value;
+    //label.innerText = document.getElementById("newItem").value;
+    if (item === '') {
         alert("Write Something");
         console.log("Empty Input");
         return ;
     }
 
-    const text = document.createTextNode(label.innerText);
-    checkbox.type= "checkbox";
-    checkbox.className = "checked";
-    checkbox.id = "toggle";
+    const text = document.createTextNode(item);
+    item.className = "items";
+    //checkbox.type= "checkbox";
+    //checkbox.className = "checked";
+    //checkbox.id = "toggle";
     newlist.className = "myList";
     span.className = "close";
-    label.htmlFor = "toggle";
+    //label.htmlFor = "toggle";
     span.appendChild(txt);
-    newlist.appendChild(checkbox);
+    //newlist.appendChild(checkbox);
     newlist.appendChild(span);
     newlist.appendChild(text);
     document.getElementById("todolist").appendChild(newlist);
     document.getElementById("newItem").value = "";
     console.log("Added");
     
-    const cancel = document.getElementsByClassName("close");
-    for (i = 0; i < cancel.length; i++) {
-        cancel[i].addEventListener('click', closeList);
-    }
+    //const cancel = document.getElementsByClassName("close");
+    //for (i = 0; i < cancel.length; i++) {
+        //cancel[i].addEventListener('click', closeList);
+    //}
+    document.querySelectorAll('.close').forEach(item => {
+        item.addEventListener('click', closeList);
+    })// Add Event Listeners to the Close symbols to each list
 };
+
+//Add Item with the Enter Key
+function EnterAdd() {
+    if(keycode === 13){
+        addTodoItem();
+        additem.click();
+        console.log("Enter Key Clicked");
+    }
+}
 
 //Add Event listener to Close
 const closeList = (x) => {
@@ -46,7 +72,7 @@ const closeList = (x) => {
 }
 
 document.querySelectorAll('.close').forEach(item => {
-    item.addEventListener('click', arrowFunction);
+    item.addEventListener('click', closeList);
 })
 
 
@@ -72,14 +98,14 @@ function Clear(){
   //}
 //}, false);
 
-//const checkList = document.getElementById("toggle");
-//const value = label.innerText;
-//checkList.addEventListener('click', CheckedList);
-//const CheckedList = (ev) => {
-    //if(checkList.checked){
-       // ev.target.value.style.textDecoration ="line-through";
-    //}
-//
+const ullist = document.getElementById('todolist');
+ullist.addEventListener('click', function(e) {
+  if (e.target.tagName === 'LI') {
+    e.target.classList.toggle('checked');
+  }
+}, false);
+
+
 
 function legacyFunc() {
     console.log("legacy runs")
@@ -88,8 +114,8 @@ function legacyFunc() {
 }
 
 const arrowFunction = (x) => {
-    //x.persist();
+    x.persist();
     console.log("arrow runs");
     var div = x.target.parentElement;
     div.remove();
-    };
+    }

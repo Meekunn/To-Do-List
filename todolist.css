@@ -90,9 +90,25 @@ ul li{
     font-variant: normal;
     position: relative;
     width: 80%;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 ul li.checked {
     text-decoration: line-through;
+}
+ul li.checked:nth-child(odd) {
+    text-decoration: line-through;
+    -moz-text-decoration-color: rgb(4, 21, 75);
+    -webkit-text-decoration-color: rgb(4, 21, 75);
+    text-decoration-color: rgb(4, 21, 75);
+}
+ul li.checked:nth-child(even) {
+    text-decoration: line-through;
+    -moz-text-decoration-color: rgb(4, 21, 75);
+    -webkit-text-decoration-color: rgb(4, 21, 75);
+    text-decoration-color: rgb(4, 21, 75);
 }
 .close{
     position: absolute;
